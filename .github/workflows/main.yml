@@ -40,6 +40,6 @@ jobs:
     - name: Create GitHub Release
       uses: softprops/action-gh-release@v1
       with:
-        files: build/release/package.zip
+        files: package.zip
         token: ${{ secrets.GITHUB_TOKEN }}
         draft: true
