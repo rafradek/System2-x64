@@ -19,12 +19,12 @@ jobs:
       with:
         submodules: recursive
 
-    - name: Clone and install AMBuild
+    - name: Build
       run: |
-        apt install libssl-dev g++-multilib make autotools
+        sudo apt install libssl-dev g++-multilib make autotools
         ./build.sh
         
-    - name: Upload package-linux-optimize-only
+    - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
         name: package-linux-optimize-only
