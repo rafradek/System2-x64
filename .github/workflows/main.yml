@@ -1,0 +1,31 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-package:
+    defaults:
+      run:
+        shell: bash
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        submodules: recursive
+
+    - name: Clone and install AMBuild
+      run: |
+        apt install libssl-dev g++-multilib make autotools
+        ./build.sh
+        
+    - name: Upload package-linux-optimize-only
+      uses: actions/upload-artifact@v4
+      with:
+        name: package-linux-optimize-only
+        path: Release/System2.ext.so
