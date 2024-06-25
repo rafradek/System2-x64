@@ -36,3 +36,4 @@
 *.so
 Release*/
 Debug*/
+build-linux/

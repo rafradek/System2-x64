@@ -31,7 +31,7 @@ ExecuteThread::ExecuteThread(std::string command, int data, std::shared_ptr<Call
 void ExecuteThread::Run() {
     bool success = true;
     std::string output;
-    int exitStatus;
+    int exitStatus = -1;
 
     // Execute the command
     FILE* commandFile = PosixOpen(this->command.c_str(), "r");
