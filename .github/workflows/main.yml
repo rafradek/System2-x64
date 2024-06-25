@@ -21,7 +21,7 @@ jobs:
 
     - name: Build
       run: |
-        sudo apt install libssl-dev g++-multilib make libtool
+        sudo apt install libssl-dev g++-multilib make libtool curl
         ./build.sh
         
     - name: Upload artifact
