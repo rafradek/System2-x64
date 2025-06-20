@@ -18,8 +18,8 @@ jobs:
     steps:
     - name: Dependencies
       run: |
-        sudo apt-get update
-        sudo apt-get install -y wget git libssl-dev g++-multilib make libtool curl zip
+        apt-get update
+        apt-get install -y wget git libssl-dev g++-multilib make libtool curl zip
         
     - name: Checkout repository
       uses: actions/checkout@v4
