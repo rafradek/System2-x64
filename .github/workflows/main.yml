@@ -11,7 +11,9 @@ jobs:
       run:
         shell: bash
 
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu:20.04
 
     steps:
     - name: Checkout repository
@@ -21,7 +23,7 @@ jobs:
 
     - name: Build
       run: |
-        sudo apt install libssl-dev g++-multilib make libtool curl zip
+        sudo apt install wget git libssl-dev g++-multilib make libtool curl zip
         chmod u+x ./build.sh
         ./build.sh
         mkdir -p package/addons
