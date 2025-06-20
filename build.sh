@@ -51,6 +51,7 @@ if [[ ! -f "curl-7.76.0.zip" ]]; then
 fi
 
 cd curl-7.76.0
+sed -i 's/curl -w/curl -L -w/g' lib/mk-ca-bundle.pl
 ./configure --with-ssl="$BUILD_DIR/openssl-1.1.1k" --with-zlib="$BUILD_DIR/zlib-1.3.1" \
  --with-libidn2="$BUILD_DIR/libidn2-2.2.0" --disable-shared --enable-static --disable-rtsp \
  --disable-ldap --disable-ldaps --disable-manual --disable-libcurl-option --without-librtmp \
